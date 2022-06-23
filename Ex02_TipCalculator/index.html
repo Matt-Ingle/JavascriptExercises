@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <div class="center">
+    <h1>Tip Calculator</h1>
+  </div>
+  <div class="center">
+    <div class="form">
+      <div class="form-field">
+        <span class="input-group-addon">$</span>
+        <input type="text" placeholder="Total Bill" id="billTotalInput">  
+      </div>
+      <div>
+        <div class="form-field">
+          <label for="tipInput">Tip:</label>
+          <input type="range" min="0" max="30" class="form-control" id="tipInput" value="0">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="center">
+    <div class="form">
+      <b>Results:</b>
+      <table>
+        <tr>
+          <td><label for="tipAmount">Tip Amount:</label></td>
+          <td><input type="number" id="tipDollarAmount" disabled></td>
+        </tr>
+        <tr>
+          <td><label for="totalWithTip">Total with Tip:</label></td>
+          <td><input type="number" id="totalWithTip" disabled></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="center instructions">
+    <p>
+      This will help you calculate your tip, based on your total bill and the
+      amount you want to tip, from 0% to 30%.  The "Tip" slider allows you to
+      select a value in the range of 0 through 30 as its value.  
+      The ".value" property of this input will return that value as a number, 0 to 30.  
+      Tip amount should be "Total Bill" times the "Tip" as a percent (the value of 
+      the input divided by 100), and the Total with Tip is this plus
+      the original "Total Bill".
+    </p>
+    Hints:
+    <ul>
+      <li>
+        The slider is an input type, with a value based on the values 0 to 30. You
+        can get the value just as if it were a regular "text" or "number" input.        
+      </li>
+      <li>
+        The tip isn't the value of the range input field, it is the value / 100, to 
+        make it a percentage.
+      </li>
+      <li>
+        We'll need to handle the 'change' events on both the input range field for the
+        tip, <b>plus</b> the Total Bill input.  The listeners have been provided, but
+        you'll need to create your own function.
+      </li>
+      <li>
+        When either of the input fields at the top change, you should recalculate the Tip
+        Amount and Total with Tip, placing the results as the value for the
+      </li>
+    </ul>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+</html>

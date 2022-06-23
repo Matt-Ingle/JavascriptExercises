@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <div class="center">
+    <h1>Countdown Timer</h1>
+  </div>
+  <div class="center counter-value">
+    <span id="timeDisplay">00:00</span>
+  </div>
+  <div class="center">
+    <div class="form">
+      <div class="form-field">
+        <input type="text" placeholder="Enter minutes" id="minutesInput" value="5">  
+      </div>
+      <div>
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+        <button id="resetButton">Reset</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="center instructions">
+    <p>
+      Enter the number of minutes to start counting down from.  When the
+      user hits 'Start', the timer begins counting down to 0, showing "00:00"
+      as minutes:seconds.  Stop when it gets to 0.  Stop will stop the countdown
+      and start will re-start it.  Reset stops the countdown and resets to 0.
+    </p>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+</html>

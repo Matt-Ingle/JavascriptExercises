@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State Capitals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <div class="center">
+    <h1>State Capitals</h1>
+  </div>
+  <div class="center score-div">
+    <div>
+      Score:
+      <span class="scoreDisplay">0</span>
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="form">
+      <div class="question">
+        <span id="stateDisplay">Montana</span>
+      </div>
+      <div class="form-field">
+        Capital: 
+        <input type="text" id="capitalInput" placeholder="Your Guess">
+        <input type="submit" value="Guess" id="guessButton">
+      </div>
+      <div class="form-field">
+        <span id="previousResultDisplay"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="center instructions">
+    <p>
+      Make a quiz game to answer what the capital is for each state in the 
+      U.S. The user should be presented with a state (in the 'stateDisplay') 
+      and will need to answer what the capital of that state is.  When they
+      hit enter or the 'Guess' button, it will:
+      <ul>
+        <li>
+          Show if the answer was correct, or, if wrong, tell the user the 
+          right answer.
+        </li>
+        <li>If they guessed correctly, increment the score.</li>
+        <li>Show the next state to try to answer.</li>
+      </ul>
+    </p>
+    <p>
+      The state's and their capitals are saved as an array in the 
+      stateCapitals.js file. The app.js file imports this array for you 
+      to use there.
+    </p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

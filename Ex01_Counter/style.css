@@ -1,0 +1,36 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.counter-value {
+  margin: 20px;
+  font-size: 84px;
+  color: rgb(7, 62, 7);
+}
+
+.buttons button {
+  margin: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(74, 74, 74);
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.instructions {
+  background-color: rgb(74, 74, 74);
+  color: white;
+  font-style: italic;
+  border: 2px solid rgb(40, 40, 40);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 50px auto;
+  width: 75%;
+}
+

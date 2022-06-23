@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncy Ball</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <div class="center">
+    <h1>Bouncy Ball</h1>
+  </div>
+  <div class="center">
+    <div id="grid">      
+    </div>
+  </div>
+  <div class="center">
+    <span id="runningDisplay">Stopped</span>
+  </div>
+  <div class="center instructions">
+    <p>
+      Make a 'ball' (okay, a square... although bonus points for making it a ball) 'bounce' 
+      around a bounded. When it hits a wall, it 'bounces' and goes in the other direction.
+      Start the ball moving by hitting the 'Enter' key, and stop it by pressing the 'Enter'
+      key again.      
+    </p>
+    <p>
+      Hints:
+      <ul>
+        <li>
+          We can re-use a <b>lot</b> of the stuff from the snake game: wall 
+          collision-detection, showing the ball (like the 'apple' or the 'snake').
+        </li>
+        <li>
+          When you hit a wall, it should 'bounce.' If it is going up and to the right,
+          and it hits the top wall, it should <b>continue</b> to move right, <b>but</b>
+          it should switch to moving down.
+        </li>
+      </ul>
+    </p>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+</html>
