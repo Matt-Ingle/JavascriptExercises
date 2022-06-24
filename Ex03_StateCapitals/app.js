@@ -1,5 +1,5 @@
 // NOTE: This imports an ARRAY of state capital data from the given file.
-//       Each item in the array is a Javascript object, with two properties:
+//       Each ITEM in the array is a Javascript object, with two properties:
 //
 //             state:   The name of the state, as a string
 //             capital: The name of the capital, as a string
@@ -18,6 +18,10 @@ let score = 0;
 // This function will return a random number between the 'min'
 // parameter and the 'max' parameter.  This can be useful for
 // things like, I dunno, getting a random item from an array...
+// So calling it with something like:
+//      let randomNumber = getRandomNumber(5, 10)
+// 
+// would return either 5, 6, 7, 8, 9, or 10
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }

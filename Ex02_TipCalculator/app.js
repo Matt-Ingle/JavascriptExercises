@@ -6,7 +6,9 @@ const totalWithTip = document.getElementById("totalWithTip");
 //
 //  Hint: to set the value of the output fields, tipAmount and
 //        totalWithTip, you'd set their "value", that is: tipAmount.value,
-//        because they are input fields in the index.html file.
+//        because they are input fields in the index.html file. Normally
+//        for other HTML elements we'd be setting their "innerText" if
+//        we wanted to display something
 //
 
 // When the tip amount input range/slider is changed, the
