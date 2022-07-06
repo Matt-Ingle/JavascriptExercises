@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <div class="center">
+    <h1>Binary Search</h1>
+  </div>
+  <div class="center">
+    <select name="cities" id="citiesSelect" size="10">        
+    </select>
+  </div>
+  <div class="center">    
+    <form id="form">
+      <label for="count">City:</label>
+      <input type="text" name="search">
+      <button type="submit">Find</button>
+    </form>
+  </div>
+  <br>
+  <div class="center">
+    <h3>Result 
+        <div id="resultDiv"></div>
+    </h3>    
+  </div>
+  <div class="center instructions">
+    <p>
+      Given an array of 'n' elements and a target element 'target', find the index
+      of 'target' in the array.  Return -1 if the target element is not found.
+    </p>
+    <p>
+      However, this time, we'll use a "Binary Search."  A binary search assumes our
+      array is already sorted, in our case, it is sorted alphabetically.  This allows
+      us to perform the following algorithm:
+      <ul>
+        <li>If the array is empty, return -1, which is a type of "base case"</li>
+        <li>If the array has elements, find the middle element in the array.</li>
+        <li>If the target is equal to the middle element, return that element's index.</li>
+        <li>
+          If target is "less than" (i.e., comes before) the middle element, binary
+          search the left half of the array.
+        </li>
+        <li>
+          If target is "greater than" (i.e., comes after) the middle element, binary
+          search the right half of the array.
+        </li>
+      </ul>
+    </p>
+    <p>
+      In our example, we'll use a list of Cities in Montana as the array of elements,
+      and the target will be the search item.  For example, "Baker" is the third city
+      in our list, Baker's index is "2" (since the index is zero-based, i.e., the first
+      city, Anaconda, is array index "0").
+    </p>
+  </div>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
