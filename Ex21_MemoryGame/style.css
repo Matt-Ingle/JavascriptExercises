@@ -1,0 +1,61 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(74, 74, 74);
+  color: white;
+  font-style: italic;
+  border: 2px solid rgb(40, 40, 40);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 50px auto;
+  width: 75%;
+}
+
+#resultDiv {
+  width: 75%;
+  font-size: large;
+  font-weight: 700;
+  background-color: lightgray;
+}
+
+
+#game {
+  text-align: center;
+}
+
+.row {
+  text-align: center;
+  padding: 5px;
+}
+
+.card {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #999;
+  cursor: pointer;
+  margin: 1px;
+  font-size: 0;
+}
+
+.show {
+  background-color: rgb(107, 154, 255);
+  font-size: 80px;
+}
+
+.card:hover {
+  box-shadow: inset 0px 0px 0px 2px red;
+  box-sizing: border-box;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting: Insertion Sort</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <div class="center">
+    <h1>Sorting: Insertion Sort</h1>
+  </div>
+  <div class="center">
+    <select name="cities" id="citiesSelect" size="10" title="cities">        
+    </select>
+  </div>
+  <div class="center">    
+    <form id="form">
+      <button type="submit">Sort</button>
+    </form>
+  </div>
+  <br>
+  <div class="center instructions">
+    <p>
+      Given an array of 'n' elements, we need to sort the elements.  For our
+      cities in Montana, we want to sort them alphabetically.
+    </p>
+    <p>
+      We'll do this using a <strong>Bubble Sort</strong> algorithm.
+    </p>
+    <p>
+      It works by comparing the city at index 0 with the city at
+      index 1 and, if the city at index 1 should come before, it 
+      <strong>swaps</strong> those two elements. Then, the 
+      city now at index 1 is compared with the city at index 2, and
+      again index 1 and index 2 are swapped if 2 should come before 1.
+      And on through to index <b>array.length - 1</b>.  
+    </p>
+    <p>
+      But, we need to iterate again, this time only going through 
+      to the next-to-last element in the array, since we will have
+      already "pushed" last city to the end.  So the next
+      iteration only goes to <b>array.length - 1 - 1</b>.  And we 
+      do it again, up to <b>array.length - 2 - 1</b>, and again, 
+      and again, all the way up to <b>array.length - array.length - 1</b>.
+    </p>      
+    <p>
+      Here is  an illustration using numbers rather than cities:
+    </p>
+  </div>
+  <div class="center" >
+    <img src="img/bubblesort.gif" alt="bubble sort" width="330">
+  </div>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(74, 74, 74);
+  color: white;
+  font-style: italic;
+  border: 2px solid rgb(40, 40, 40);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 50px auto;
+  width: 75%;
+}
+
+#resultDiv {
+  width: 75%;
+  font-size: large;
+  font-weight: 700;
+  background-color: lightgray;
+}
+
+.game {
+  background-color: black;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.panel {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin: 3px;
+  display: inline-block;
+}
+
+.middle {
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: gray;
+  left: 320px;
+
+}
+
+.bottom-left {
+  border-bottom-left-radius: 200px;
+  background-color: red;
+}
+
+.bottom-right {
+  border-bottom-right-radius: 200px;
+  background-color: green;
+}
+
+.top-left {
+  border-top-left-radius: 200px;
+  background-color: blue;
+}
+
+.top-right {
+  border-top-right-radius: 200px;
+  background-color: yellow;
+}
+
+.click-enabled:hover, .active {
+  opacity: 0.75;
+  border-color: cyan;
+  box-shadow: inset 0px 0px 0px 1px rgb(202, 255, 255);
+}
