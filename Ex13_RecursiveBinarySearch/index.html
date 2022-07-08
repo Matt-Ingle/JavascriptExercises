@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binary Search</title>
+  <title>Recursive Binary Search</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <br>
   <div class="center">
-    <h1>Binary Search</h1>
+    <h1>Recursive Binary Search</h1>
   </div>
   <div class="center">
     <select name="cities" id="citiesSelect" size="10">        
@@ -29,26 +29,30 @@
         <div id="resultDiv"></div>
     </h3>    
   </div>
-  <div class="center instructions" style="color: red; font-style: bold; background-color: white;;">
-    This exercise has been solved for you.  
-    Take a look at the code and try to understand what is happening.
-  </div>
+
   <div class="center instructions">
     <p>
       Given an array of 'n' elements and a target element 'target', find the <strong>index</strong>
       of 'target' in the array.  Return -1 if the target element is not found. For example, the
-      index for "Belgrade" would be "4"
+      index for "Belgrade" would be "4".  Same as the previous exercise, but find the index 
+      <strong>recursively.</strong>
+    </p>
+    <p>
+      Remember, to solve this recursively, you should figure out how to break down the problem
+      into smaller versions of the same problem.  Also, figure out the "base case" that will end
+      the recursion.
     </p>
     <p>
       However, this time, we'll use a "Binary Search."  A binary search assumes our
       array is already sorted, in our case, it is sorted alphabetically.  This allows
       us to perform the following algorithm:
       <ol>
+        <li>If the array is empty, return "-1" as the element was not found.</li>
         <li>If the array has elements, find the middle element in the array.</li>
         <li>If the target is equal to the middle element, return that element's index.</li>
         <li>
           If target is "less than" (i.e., comes before) the middle element, binary
-          search the left half of the array.
+          search the left half of the array. [hint: pass that array recursively]
         </li>
         <li>
           If target is "greater than" (i.e., comes after) the middle element, binary
