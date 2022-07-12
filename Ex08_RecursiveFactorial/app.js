@@ -22,6 +22,15 @@ const resultDiv = document.getElementById("resultDiv");
 
 // -----------------------------------------
 function getFactorial(num) {
+  // Handle the "base case"
+  if (num === 0) {
+    return 1;
+  }
+
+  // TODO: We can return "num" times... what?
+  //       if we say:
+  //           return num * getFactorial(???);
+  //       what should the "???" parameter be??
 }
 
 form.addEventListener('submit', (ev) => {
