@@ -1,8 +1,14 @@
 const gameGrid = document.getElementById("gameGrid");
 const startButton = document.getElementById("startButton");
-startButton.addEventListener('click', randomize);
+const timeDiv = document.getElementById("timeDiv");
+startButton.addEventListener('click', () => {
+  timeDiv.innerText = "Restarting... ";
+  randomize();
+  startTimer();
+});
 
-let cards = [];
+// The list of possible letters/numbers that can be under
+// tile pairs.
 const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 
 // NOTE: WIDTH * HEIGHT must be even, otherwise the randomize
@@ -11,21 +17,39 @@ const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 const WIDTH = 6;
 const HEIGHT = 5;
 
+// The initialize() function, towards the bottom, populates
+// the cards array with HTMLElements, where each
+// element's innerText contains a letter or number.
+let cards = [];
+
+let timerTick;
+
+// Check to make sure we are okay with the
+// characters/WIDTH/HEIGHT
 if (WIDTH * HEIGHT % 2 !== 0 || 
     (WIDTH * HEIGHT) / 2 > characters.length) {
   throw("ERROR, invalid parameters for WIDTH, HEIGHT")
 }
 
 // -----------------------------------------------
+// Pass a card (an HTMLElement) to this function to
+// open or close a card, with toggle being true
+// ('open' the card) or false ('close' the card)
 function showCard(card, toggle) {
   if (toggle) {
-    card.classList.add("show");
+    card.classList.add("open");
   } else {
-    card.classList.remove("show");
+    card.classList.remove("open");
   }
 }
 
 // -----------------------------------------------
+// TODO: - What needs to happen when a card is clicked?
+//       - How should we keep control of how many
+//         cards the user has opened?
+//       - How do we see if the two cards they opened
+//         'match?'  
+//       - How do we determine when the game is over?
 function onCardClick(e) {
   showCard(e.currentTarget, true);
 }
@@ -66,6 +90,8 @@ function randomize() {
 // screen, each with their click event handler
 // set.
 function initialize() {
+
+  // Generate card tiles
   for(let row = 0 ; row < HEIGHT; row++) {
     const rowDiv = document.createElement('div');
     gameGrid.appendChild(rowDiv);
@@ -78,7 +104,28 @@ function initialize() {
       cards.push(card);
     }
   }
+
+}
+
+// -----------------------------------------------
+// Each time this function is called, a timer is 
+// set up with a start time and displays the number
+// of seconds that have passed.  When the player
+// "wins,"  the timer should be stopped with 
+// clearInterval(timerTick).
+function startTimer() {
+  // If there is a running timer to display seconds, clear it
+  clearInterval(timerTick);
+  
+  const  startTime = new Date();
+
+  // Set up a timer which displays the # of seconds passed.
+  timerTick = setInterval(() => {
+    const seconds = Math.floor((new Date() - startTime) / 1000);
+    timeDiv.innerText = `${seconds} seconds ... `;
+  }, 1000);
 }
 
 initialize();
 randomize();
+startTimer();

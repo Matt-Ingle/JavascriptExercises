@@ -26,6 +26,7 @@
   </div>
   <div class="center">
       <button type="submit" id="startButton">Start / Reset</button>
+      <div id="score"></div>
   </div>
   <br>
   <div class="center">
@@ -33,6 +34,18 @@
   <div class="center instructions">
     <p>
       Play the game of Simon.
+    </p>
+    <p>
+      Simon is a game where the computer selects one of four 'panels' for you
+      to press. When you press the correct panel, Simon repeats the sequence 
+      and adds an additional, random panel to the sequence, making the number
+      of panels you have to remember to press longer and longer.  
+    </p>
+    <p>
+      Most of the game has been built: how to flash panels, etc.  But what
+      <strong>YOU</strong> need to do is figure out the logic behind processing
+      the player's clicks: how to see if they enter the right sequence as well
+      as determining when to add a new panel to the sequence or end the game.
     </p>
   </div>
   <script type="module" src="app.js"></script>

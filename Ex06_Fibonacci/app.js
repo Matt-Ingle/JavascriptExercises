@@ -1,7 +1,6 @@
 const form = document.getElementById("form");
 const resultDiv = document.getElementById("resultDiv");
 
-
 //
 // Since the Fibonacci sequence is a list ('array') of numbers
 // where each number is the sum of the TWO PRECEDING numbers
@@ -26,7 +25,7 @@ const resultDiv = document.getElementById("resultDiv");
 // -----------------------------------------
 function getFibonacciSequence(num) {
   // If the number is 0 or 1, return just that number as
-  // the sequence; this is the Fibonacci sequence's definition.
+  // the sequence; this is part of the Fibonacci sequence's definition.
   if (num < 2) {
     return [ num ]
   }

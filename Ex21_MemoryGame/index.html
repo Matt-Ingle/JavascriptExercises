@@ -20,10 +20,30 @@
   <br>
   <div class="center">
     <button type="submit" id="startButton">Start / Reset</button>
+    <div id="timeDiv"></div>
   </div>
   <div class="center instructions">
     <p>
       Tile Memory Game
+    </p>
+    <p>
+      This game is a tile game where letters are underneath the tiles.
+      A player selects two tiles and, if they match, they stay opened.
+      Otherwise, if they don't match, the tiles are flipped closed again
+      and the player selects two more to select matching tiles.  The 
+      player wins when all of the tiles have been flipped over.  Score
+      is based on how quiclky they were able to match all of the tiles.
+    </p>
+    <p>
+      The basic game setup and mechanics has already been set up in 
+      app.js.  <strong>TODO:</strong> You need to set up what happens
+      when a player selects two cards:
+      <ol>
+        <li>Only have them open up to two cards at a time</li>
+        <li>If the two cards that are open 'match,' then leave them open</li>
+        <li>If they don't match, 'close' them</li>
+        <li>Determine if the game is over; that is, when all the cards are 'open'</li>
+      </ol>
     </p>
   </div>
   <script type="module" src="app.js"></script>
