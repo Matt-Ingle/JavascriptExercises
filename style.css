@@ -25,3 +25,7 @@ a {
   width: 75%;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
