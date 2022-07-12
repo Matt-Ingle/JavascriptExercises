@@ -35,10 +35,21 @@ function getFibonacciSequence(num) {
   let sequence = [0, 1];
 
   //
-  // TODO: Generate the fibonacci sequence up to 
-  //       "num" numbers in the sequence.  Return
-  //       an array of numbers.
+  // TODO: Generate the fibonacci sequence up to "num" numbers in 
+  //       the sequence. Return an array of numbers.
+  // Hint 1: we're starting with a sequence of "2" and want to add 
+  //         "num - 2" more numbers to our sequence. A for loop like:
+  //            for (let i = 2; i < num; i++) { ??? }
+  // Hint 2: In the loop, we want to add a new number to the end of 
+  //         the sequence array.  We can add a number using the "push" method:
+  //            sequence.push(???)
+  // Hint 3: We can index into an array using, e.g.::
+  //            sequence[3]
+  //         to get the 4th item in the sequence
+  // Hint 4: The last item in the array is:
+  //            sequence[sequence.length - 1]
   //
+
 
   return sequence;
 }
