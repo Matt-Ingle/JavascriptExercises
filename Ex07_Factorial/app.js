@@ -10,7 +10,7 @@ function getFactorial(num) {
 
   for (i = 0; i <= num; i++) {
     if (result === 0) {
-      result += i;
+      result += 1;
     } else {
       result *= i;
     }
