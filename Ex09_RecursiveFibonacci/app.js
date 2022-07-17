@@ -17,8 +17,14 @@ function getFibonacciSequenceRecursively(num) {
     return [ num ]
   }
 
+  if (parseInt(num) === 2) {
+    return [0, 1]
+  }
   // Otherwise ...
-  let sequence;  
+  let sequence = getFibonacciSequenceRecursively(num - 1);  
+
+  sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2])
+
 
   return sequence;
 }
@@ -27,6 +33,6 @@ form.addEventListener('submit', (ev) => {
   ev.preventDefault();
   const num = form.count.value;
   console.log("Count entered: " + num);
-  const result = getFibonacciSequence(num);
+  const result = getFibonacciSequenceRecursively(num);
   resultDiv.innerText = JSON.stringify(result);
 });

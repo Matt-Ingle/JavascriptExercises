@@ -27,6 +27,7 @@ function getFactorial(num) {
     return 1;
   }
 
+  return num * getFactorial(num - 1);
   // TODO: We can return "num" times... what?
   //       if we say:
   //           return num * getFactorial(???);
