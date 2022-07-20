@@ -14,6 +14,12 @@ const resultDiv = document.getElementById("resultDiv");
 //
 
 function linearSearch(target) {
+  for (let i = 0; i < cities.length; i++) {
+    
+    if (cities[i].toLowerCase() === target.toLowerCase()) {
+      return i;
+    }
+  }
   return -1;
 }
 

@@ -3,9 +3,18 @@ const resultDiv = document.getElementById("resultDiv");
 
 // -----------------------------------------
 function isPrimeNumber(num) {
-  let result = false;
+  //let result = false;
+  let n = parseInt(num);
 
-  return result;
+  if (n === 2 || n === 3) return true;
+  if (n <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
+    if (n > 1) return true;
+  }
+
+  //return result;
 }
 
 form.addEventListener('submit', (ev) => {
