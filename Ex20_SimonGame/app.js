@@ -73,7 +73,16 @@ function onPanelClicked(e) {
   }
 
   const clickedPanel = e.currentTarget;
-  const expectedPanel = // ??? TODO
+  const expectedPanel = sequenceToGuess.shift() // ??? TODO
+
+  if (clickedPanel !== expectedPanel) {
+    initialize();
+  }
+  if (clickedPanel === expectedPanel && sequenceToGuess.length === 0) {
+    addNewPanel();
+    flashSequence(sequence);
+  }
+
 
   // TODO:
   //   1) Figure out what the expected panel is above 
