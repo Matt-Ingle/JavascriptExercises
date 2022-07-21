@@ -18,6 +18,9 @@ function bubbleSort() {
 
       // TODO: What should we do here???
 
+      if (cities[i] > cities[i + 1]) {
+        swapElements(i, i + 1)
+      }
     }  
   }
 }
