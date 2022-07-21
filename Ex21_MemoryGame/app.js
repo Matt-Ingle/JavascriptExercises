@@ -14,8 +14,8 @@ const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 // NOTE: WIDTH * HEIGHT must be even, otherwise the randomize
 //       method will fail.  Also, (WIDTH * HEIGHT)/2 must be
 //       less than characters.length
-const WIDTH = 6;
-const HEIGHT = 5;
+const WIDTH = 6; //6
+const HEIGHT = 5; //5
 
 // The initialize() function, towards the bottom, populates
 // the cards array with HTMLElements, where each
@@ -31,6 +31,11 @@ if (WIDTH * HEIGHT % 2 !== 0 ||
   throw("ERROR, invalid parameters for WIDTH, HEIGHT")
 }
 
+
+let previousTarget = null;
+let preventClick = false;
+let faceupCards = 0;
+
 // -----------------------------------------------
 // Pass a card (an HTMLElement) to this function to
 // open or close a card, with toggle being true
@@ -38,8 +43,11 @@ if (WIDTH * HEIGHT % 2 !== 0 ||
 function showCard(card, toggle) {
   if (toggle) {
     card.classList.add("open");
+    faceupCards++;
   } else {
     card.classList.remove("open");
+    faceupCards--;
+    previousTarget = null;
   }
 }
 
@@ -51,7 +59,38 @@ function showCard(card, toggle) {
 //         'match?'  
 //       - How do we determine when the game is over?
 function onCardClick(e) {
+
+  if (e.currentTarget.classList.contains("open") || preventClick) {
+    return;
+  }
+
   showCard(e.currentTarget, true);
+
+  if (faceupCards === WIDTH * HEIGHT) {
+    clearInterval(timerTick);
+    console.log("you win!");
+  }
+
+  // Todo: - Stop the timer when the game ends
+
+  if (previousTarget !== null) {
+    if (e.currentTarget.innerText === previousTarget.innerText && e.currentTarget !== previousTarget) {
+      if (faceupCards % 2 === 0) {
+        preventClick = true;
+        setTimeout(() => preventClick = false, 800)
+      }
+      previousTarget = null;
+      return;
+
+    } else if (faceupCards % 2 === 0) {
+      preventClick = true;
+      setTimeout(showCard, 700, previousTarget, false);
+      setTimeout(showCard, 700, e.currentTarget, false);
+      setTimeout(() => preventClick = false, 800)
+    }
+  }
+
+  previousTarget = e.currentTarget;
 }
 
 // -----------------------------------------------
@@ -83,6 +122,7 @@ function randomize() {
   }  
 
   cards.forEach(c => showCard(c, false));
+  faceupCards = 0;
 }
 
 // -----------------------------------------------
